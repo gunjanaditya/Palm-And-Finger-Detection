@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/permissionFragment">
+
+    <!-- ✅ Screen 1: Permission -->
+    <fragment
+        android:id="@+id/permissionFragment"
+        android:name="com.example.palmscanner.ui.permission.PermissionFragment"
+        android:label="Permissions"
+        tools:layout="@layout/fragment_permission">
+
+        <action
+            android:id="@+id/action_permission_to_palm"
+            app:destination="@id/palmDetectionFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popUpTo="@id/permissionFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <!-- ✅ Screen 2: Palm Detection -->
+    <fragment
+        android:id="@+id/palmDetectionFragment"
+        android:name="com.example.palmscanner.ui.palm.PalmDetectionFragment"
+        android:label="Palm Detection"
+        tools:layout="@layout/fragment_palm_detection">
+
+        <action
+            android:id="@+id/action_palm_to_finger"
+            app:destination="@id/fingerDetectionFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+    </fragment>
+
+    <!-- ✅ Screen 3: Finger Detection -->
+    <fragment
+        android:id="@+id/fingerDetectionFragment"
+        android:name="com.example.palmscanner.ui.finger.FingerDetectionFragment"
+        android:label="Finger Detection"
+        tools:layout="@layout/fragment_finger_detection">
+
+        <action
+            android:id="@+id/action_finger_to_result"
+            app:destination="@id/resultFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+
+        <!-- Safe Args received from Palm screen -->
+        <argument
+            android:name="handSide"
+            app:argType="com.example.palmscanner.domain.model.enums.HandSide" />
+
+        <argument
+            android:name="palmImagePath"
+            app:argType="string" />
+    </fragment>
+
+    <!-- ✅ Screen 4: Result -->
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.example.palmscanner.ui.result.ResultFragment"
+        android:label="Results"
+        tools:layout="@layout/fragment_result">
+
+        <action
+            android:id="@+id/action_result_to_permission"
+            app:destination="@id/permissionFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+
+        <!-- ✅ FIXED: session argument -->
+        <argument
+            android:name="session"
+            app:argType="com.example.palmscanner.domain.model.ScanSession" />
+    </fragment>
+
+</navigation>

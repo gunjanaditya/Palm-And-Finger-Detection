@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Palm Scanner</string>
+    <string name="btn_grant">Grant Permissions</string>
+    <string name="btn_capture_palm">Capture Palm</string>
+    <string name="btn_capture_finger">Capture Finger</string>
+    <string name="btn_scan_again">Scan Again</string>
+    <string name="label_palm_image">Palm Image</string>
+    <string name="label_finger_images">Finger Images</string>
+    <string name="label_metadata">Capture Metadata</string>
+    <string name="msg_position_palm">Position your palm inside the frame</string>
+    <string name="msg_position_finger">Place your finger in the oval</string>
+    <string name="msg_scan_complete">✅ Scan Complete</string>
+    <string name="msg_scan_incomplete">⚠️ Some fingers did not match</string>
+    <string name="error_camera_not_ready">Camera not ready</string>
+    <string name="error_no_hand">No hand detected</string>
+    <string name="error_dorsal">Please show the palm side of your hand</string>
+    <string name="error_blur">Image too blurry — hold steady</string>
+    <string name="error_wrong_hand">Incorrect hand side</string>
+    <string name="error_no_match">Finger does not match</string>
+</resources>
