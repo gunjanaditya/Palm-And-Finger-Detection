@@ -4,10 +4,6 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewbinding.ViewBinding
 
-/**
- * Custom Base Activity as per requirement (a).
- * Provides a common foundation for activities in the project.
- */
 abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity() {
 
     private var _binding: VB? = null

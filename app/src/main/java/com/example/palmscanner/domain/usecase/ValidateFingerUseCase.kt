@@ -6,13 +6,6 @@ import com.example.palmscanner.domain.model.enums.HandSide
 import com.example.palmscanner.domain.repository.IValidationRepository
 import javax.inject.Inject
 
-/**
- * Thin wrapper around IValidationRepository.validateFinger().
- * Kept separate so it can be unit tested in isolation
- * and swapped for a real biometric SDK later.
- *
- * ⚠️ SIMULATED minutiae matching inside repository impl.
- */
 class ValidateFingerUseCase @Inject constructor(
     private val validationRepository: IValidationRepository
 ) {

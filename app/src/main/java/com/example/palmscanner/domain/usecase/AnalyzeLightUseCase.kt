@@ -3,11 +3,6 @@ package com.example.palmscanner.domain.usecase
 import com.example.palmscanner.domain.model.enums.LightLevel
 import javax.inject.Inject
 
-/**
- * Converts a raw luma value into a LightLevel + actionable message.
- * Pure function — no repository needed.
- * Injected into ViewModels that need to react to brightness changes.
- */
 class AnalyzeLightUseCase @Inject constructor() {
 
     data class LightAnalysis(

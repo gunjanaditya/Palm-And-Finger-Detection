@@ -100,11 +100,4 @@ class FingerExtensionChecker @Inject constructor() {
         return (pip.y() - tip.y()) > EXTENSION_MARGIN
     }
 
-    fun debugString(extended: List<Boolean>): String {
-        if (extended.size < 5) return "invalid"
-        val labels = listOf("T", "I", "M", "R", "L")
-        return labels.zip(extended).joinToString(" ") { (label, isExtended) ->
-            "$label${if (isExtended) "✅" else "❌"}"
-        }
-    }
 }
